@@ -1,13 +1,34 @@
-function mostCalories(arr) {
-  let mostCalories = 0 
-arr.forEach(num => {
-  if (num > mostCalories) {
-    mostCalories = num
+// function mostCalories(arr) {
+//   let mostCalories = 0 
+// arr.forEach(num => {
+//   if (num > mostCalories) {
+//     mostCalories = num
+//   }
+// return (
+// console.log(mostCalories)
+// )
+// })
+// }
+
+function calorieCount(cals) {
+  console.log(Object.keys(cals).length)
+  let arr = []
+  let total = 0
+cals.map(num => {
+  console.log(cals.indexOf(num))
+  console.log('length:' + num.length)
+  if (num === 0 || cals.lastIndexOf(num) === (cals.length - 1)) {
+    total = total + num
+    arr.push(total)
+    total = 0
   }
-return (
-console.log(mostCalories)
-)
-})
+  else {
+    total = total + num
+  }
+  console.log('total:' + total)
+}
+  )
+  console.log(arr)
 }
 
-mostCalories([3, 5, 22, 4])
+calorieCount([1,3,4,,6,1,,4,20])
