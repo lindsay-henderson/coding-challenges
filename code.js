@@ -1,34 +1,19 @@
-// function mostCalories(arr) {
-//   let mostCalories = 0 
-// arr.forEach(num => {
-//   if (num > mostCalories) {
-//     mostCalories = num
-//   }
-// return (
-// console.log(mostCalories)
-// )
-// })
-// }
+//notes from js algorithms Udemy course
 
-function calorieCount(cals) {
-  console.log(Object.keys(cals).length)
-  let arr = []
+function addUpTo(n) {
+  n * (n+1) /2
+}
+
+function addUpToAlternate(n) {
   let total = 0
-cals.map(num => {
-  console.log(cals.indexOf(num))
-  console.log('length:' + num.length)
-  if (num === 0 || cals.lastIndexOf(num) === (cals.length - 1)) {
-    total = total + num
-    arr.push(total)
-    total = 0
+  for (let i = 1; i<=n; i++) {
+    total += 1
   }
-  else {
-    total = total + num
-  }
-  console.log('total:' + total)
+  return total
 }
-  )
-  console.log(arr)
-}
-
-calorieCount([1,3,4,,6,1,,4,20])
+// 
+//
+let t1 = performance.now()
+addUpTo(1000000000)
+let t2 = performance.now()
+console.log (`Time elapsed: ${(t2-t1) / 1000} seconds`)
