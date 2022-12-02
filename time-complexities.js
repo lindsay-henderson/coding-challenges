@@ -3,6 +3,8 @@
 function addUpTo(n) {
   n * (n+1) /2
 }
+// This is constant,  the number od steps is consistent regardless of size of 'n'
+//O(1)
 //takes 3 operations, add, multiply, and divide.
 
 function addUpToAlternate(n) {
@@ -12,7 +14,9 @@ function addUpToAlternate(n) {
   }
   return total
 }
-// this is a loop. does an operation for each number leading up to 
+//number of operations varies, is bounded to multiples of 'n'
+//O(n)
+//this is a loop. does an operation for each number leading up to 
 // 
 //
 let t1 = performance.now()
