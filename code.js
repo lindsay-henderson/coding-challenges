@@ -45,35 +45,54 @@
 
 
 
-function StringChallenge(str) { 
-  str = str.toLowerCase()
-  let letterNums = {}
-  let letter = '0abcdefghijklmnopqrstuvwxyz'
-  let ans = ''
-  for (let i = 1; i<= letter.length; i++) {
-    letterNums[letter[i]] = i
-    console.log(letterNums)
-  }
+// function StringChallenge(str) { 
+//   str = str.toLowerCase()
+//   let letterNums = {}
+//   let letter = '0abcdefghijklmnopqrstuvwxyz'
+//   let ans = ''
+//   for (let i = 1; i<= letter.length; i++) {
+//     letterNums[letter[i]] = i
+//     console.log(letterNums)
+//   }
 
-  for (let j = 0; j < str.length; j++) 
-    if (letter.includes(str[j])) {
-    ans += (letterNums[str[j]])
-    console.log (ans)
-  } else {
-    ans += str[j]
-  }
-  str = ans
-  // code goes here  
-
-}
-// str[j].replace(str[j], letterNums[str[j]])
-//   console.log("j is " + str[j]) }}
+//   for (let j = 0; j <= str.length; j++) 
+//     if (letter.includes(str[j])) {
+  //     ans += (letterNums[str[j]])
+  //     console.log (ans)
+  //   } else {
+    //     ans += str[j]
+    //   }
+    //   str = ans
+    //}
+    // code goes here  
+    
+    
+    // str[j].replace(str[j], letterNums[str[j]])
+    //   console.log("j is " + str[j]) }}
     // ) 
-  // result = (letter.match (str[j] / letterNums[str[j]]) )
+    // result = (letter.match (str[j] / letterNums[str[j]]) )
     //   ans += letterNums[str[j]]
     // }
     // else { ans += str[j]
     // }
     // console.log(result)
+    
+    //StringChallenge('123 abc!')
 
-StringChallenge('123 abc!')
+    function ArrayChallenge(arr) { 
+      let count = {}
+      let output = 0
+      arr.forEach(num => {
+        count[num] = (count[num] || 0) + 1
+        if (count[num] > 1) {
+          output = output + 1
+        }
+      arr = output
+      })
+    
+      // code goes here  
+      return arr; 
+    
+    }
+
+    ArrayChallenge(1,3,5,5,2)
