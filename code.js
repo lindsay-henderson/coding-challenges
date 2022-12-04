@@ -1,23 +1,79 @@
-//notes from js algorithms Udemy course
+// //notes from js algorithms Udemy course
 
-function addUpTo(n) {
-  n * (n+1) /2
-}
-//takes 3 operations, add, multiply, and divide.
+// function addUpTo(n) {
+//   n * (n+1) /2
+// }
+// //takes 3 operations, add, multiply, and divide.
 
-function addUpToAlternate(n) {
-  let total = 0
-  for (let i = 1; i<=n; i++) {
-    total += 1
+// function addUpToAlternate(n) {
+//   let total = 0
+//   for (let i = 1; i<=n; i++) {
+//     total += 1
+//   }
+//   return total
+// }
+// // this is a loop. does an operation for each number leading up to 
+// // 
+// //
+// let t1 = performance.now()
+// addUpTo(1000000000)
+// let t2 = performance.now()
+// console.log (`Time elapsed: ${(t2-t1) / 1000} seconds`)
+
+// // best to count the number of operations the computer has to perform instead of trying to time it\\
+
+// function challenge(n) {
+//   for (let i = 1; i < n; i++) {
+//     if (i % 15 === 0) {
+//       return "FizzBuzz"
+//   }
+//     else if (i % 3 === 0) { return "Fizz"}
+//     else if (i % 5 === 0) { return "Buzz"}
+//     else { return i }
+//   }
+// } 
+
+//   console.log(num)
+
+//   for (let i = 1; i <= num; i++) {
+//     if (i++ % 15 == 0) { return "FizzBuzz"}
+//     else if (i % 3 == 0) { return "Fizz"}
+//     else if (i % 5 == 0) { return "Buzz"}
+//     else console.log(i);
+//   }
+// challenge(20)
+
+
+
+function StringChallenge(str) { 
+  str = str.toLowerCase()
+  let letterNums = {}
+  let letter = '0abcdefghijklmnopqrstuvwxyz'
+  let ans = ''
+  for (let i = 1; i<= letter.length; i++) {
+    letterNums[letter[i]] = i
+    console.log(letterNums)
   }
-  return total
-}
-// this is a loop. does an operation for each number leading up to 
-// 
-//
-let t1 = performance.now()
-addUpTo(1000000000)
-let t2 = performance.now()
-console.log (`Time elapsed: ${(t2-t1) / 1000} seconds`)
 
-// best to count the number of operations the computer has to perform instead of trying to time it
+  for (let j = 0; j < str.length; j++) 
+    if (letter.includes(str[j])) {
+    ans += (letterNums[str[j]])
+    console.log (ans)
+  } else {
+    ans += str[j]
+  }
+  str = ans
+  // code goes here  
+
+}
+// str[j].replace(str[j], letterNums[str[j]])
+//   console.log("j is " + str[j]) }}
+    // ) 
+  // result = (letter.match (str[j] / letterNums[str[j]]) )
+    //   ans += letterNums[str[j]]
+    // }
+    // else { ans += str[j]
+    // }
+    // console.log(result)
+
+StringChallenge('123 abc!')
