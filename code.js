@@ -6,8 +6,20 @@ function addUpTo(n) {
 // //takes 3 operations, add, multiply, and divide.
 
 // function logAtLeast5(n) {
-//   for(var i = 1; i<= Math.max(5,n); i++) {console.log(i)}
-// }
+//   for(var i = 1; i<= Math.max(5,n); i++ {
+//    console.log(i)
+//  }
+//  }
+// big O = O(n) number grows in proportion to n
+
+//function logAtLeast5(n) {
+//  for(var i = 1; i<= Math.min(5,n); i++ {
+//    console.log(i)
+//  }
+//  }
+// big O = O(5) at the largest. number grows in proportion to n.  min is a constant, or loops runs a smaller number of times
+
+//
 
 // function addUpToAlternate(n) {
 //   let total = 0
@@ -95,6 +107,7 @@ console.log (`Time elapsed: ${(t2-t1) / 1000} seconds`)
     //     }
     //   arr = output
     //   })
+    //***try this with Math.max(), (don't use no params or it will run forever and that's annoying) smh */
     
     //   // code goes here  
     //   return arr; 
