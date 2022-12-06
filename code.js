@@ -1,9 +1,13 @@
 // //notes from js algorithms Udemy course
 
-// function addUpTo(n) {
-//   n * (n+1) /2
-// }
+function addUpTo(n) {
+  n * (n+1) /2
+}
 // //takes 3 operations, add, multiply, and divide.
+
+// function logAtLeast5(n) {
+//   for(var i = 1; i<= Math.max(5,n); i++) {console.log(i)}
+// }
 
 // function addUpToAlternate(n) {
 //   let total = 0
@@ -14,11 +18,13 @@
 // }
 // // this is a loop. does an operation for each number leading up to 
 // // 
-// //
-// let t1 = performance.now()
-// addUpTo(1000000000)
-// let t2 = performance.now()
-// console.log (`Time elapsed: ${(t2-t1) / 1000} seconds`)
+//
+let t1 = performance.now()
+addUpTo(1000000000)
+let t2 = performance.now()
+console.log (`Time elapsed: ${(t2-t1) / 1000} seconds`)
+
+
 
 // // best to count the number of operations the computer has to perform instead of trying to time it\\
 
@@ -79,20 +85,20 @@
     
     //StringChallenge('123 abc!')
 
-    function ArrayChallenge(arr) { 
-      let count = {}
-      let output = 0
-      arr.forEach(num => {
-        count[num] = (count[num] || 0) + 1
-        if (count[num] > 1) {
-          output = output + 1
-        }
-      arr = output
-      })
+    // function ArrayChallenge(arr) { 
+    //   let count = {}
+    //   let output = 0
+    //   arr.forEach(num => {
+    //     count[num] = (count[num] || 0) + 1
+    //     if (count[num] > 1) {
+    //       output = output + 1
+    //     }
+    //   arr = output
+    //   })
     
-      // code goes here  
-      return arr; 
+    //   // code goes here  
+    //   return arr; 
     
-    }
+    // }
 
-    ArrayChallenge(1,3,5,5,2)
+    // ArrayChallenge(1,3,5,5,2)
