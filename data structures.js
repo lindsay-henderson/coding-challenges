@@ -7,3 +7,5 @@
 
 //O(n² + 5 + 8) = O(n2)
 
+//O(n^2 + n^3) = O(n^3)  this is 'upper bound' meaning the function will take no longer than the highest number
+
