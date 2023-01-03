@@ -59,18 +59,19 @@
 
 function charCount(str){
   //make object to return at end
-  var result = {}
+  let result = {};
   //loop over string --for each char
-  for(let i = 0; i < 4; i++){
-    result = i++
+  for(let i = 1; i < str.length; i++){
+    let char = str[i]+1
     // //if char is num|| letter, && key in obj, +1 to count, if  num || letter and not in obj, add it to obj and set value to 1
-    // if(result[char] > 0) {
-    //   result[char]++;
-    // } else {
-    //   result[char] = 1
-    // }
-    return result
+    if(result[char] > 0) {
+      result[char]++;
+    } 
+    else {
+      result[char] = 1
+    }
   }
+  return result
 }
   // if char is not letter||num, do nothing
   //look at each character- is it in the object yet?  if not, add to object and add 1 to count
