@@ -62,7 +62,7 @@ function charCount(str){
   var result = {};
   //loop over string --for each char
   for(var i = 0; i < str.length; i++){
-     var char = str[i]
+     var char = str[i].toLowerCase()
     // //if char is num|| varter, && key in obj, +1 to count, if  num || varter and not in obj, add it to obj and set value to 1
     if(result[char] > 0) {
       result[char]++;
