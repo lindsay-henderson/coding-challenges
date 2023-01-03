@@ -2,9 +2,17 @@
 //1. can I restate the problem in my own words?
 //?? example: "impliment addition" a+b
 
-// what are the inputs?
+// 2.what are the inputs?
 
-//what are the outputs/ return?
+//3.what are the outputs/ return?
 
-//can the output be determined from the inputs?
+//4.can the output be determined from the inputs?
+
+//!! explore examples
+
+//
+//1. start with simple examples
+//2.progress to more complicated examples
+//3.explore examples with empty inputs
+//4.explore examples with invalid inputs
 
