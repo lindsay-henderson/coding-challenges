@@ -59,10 +59,10 @@
 
 function charCount(str){
   //make object to return at end
-  var result = {};
+  let result = {};
   //loop over string --for each char
-  for(var i = 0; i < str.length; i++){
-     var char = str[i].toLowerCase()
+  for(let i = 0; i < str.length; i++){
+    let char = str[i].toLowerCase()
     // //if char is num|| varter, && key in obj, +1 to count, if  num || varter and not in obj, add it to obj and set value to 1
     if(result[char] > 0) {
       result[char]++;
@@ -75,3 +75,55 @@ function charCount(str){
 }
   // if char is not varter||num, do nothing
   //look at each character- is it in the object yet?  if not, add to object and add 1 to count
+
+  //* Look back and refactor your code
+    //*a.can you check the result?
+    //*b.can you derive the result differently?
+    //*c. can you understand it at a glance?
+    //*d. can you use the result method for some other problem?
+    //*e.can you improve the performance of your solution? (time/space complexity, look at nested loops)
+    //*can you think of other ways to refactor?(spacing, consistent formatting)
+    //*how have other people solved this problem?(pick an interviewers brain if whiteboarding)
+
+// function charCount(str){
+
+//   let result = {};
+//   //loop over string --for each char
+//   for(let i = 0; i < str.length; i++){
+//     var char = str[i].toLowerCase()
+//     if(/[a-z0-9]/.test(char)) {
+//       if(result[char] > 0) {
+//         result[char]++;
+//       } 
+//       else {
+//         result[char] = 1
+//       }
+//     }
+//   }
+//   return result
+// }
+
+//! alternate approach:
+
+function charCount(str) {
+  let result = {}
+  for(let char of str) {
+    if(isAlphaNumeric(char)) {
+      char = char.toLowerCase()
+      //converts fewer characters to lower case
+      result[char] = ++result[char] || 1
+      //if value of object[char] exists(is truthy), increase, if nothing is there, then it's = 1
+    }
+  }
+  function isAlphaNumeric(char) {
+    let code = char.charCodeAt(0)
+    if(!(code >47 && code <58) &&
+      !(code >64 && code <91) &&
+      !(code > 96 && code < 123)) {
+        return false
+      }
+      return true
+  }
+
+}
+
