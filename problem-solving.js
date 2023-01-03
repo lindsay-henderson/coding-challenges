@@ -36,14 +36,14 @@
 
 //function charCount("Your PIN number is 1234"){
   //do something
-  //todo We only care about alphanumeric characters, lowercase letters"
+  //todo We only care about alphanumeric characters, lowercase varters"
 
   //? will be doing something once for each character
 
   //make object to return at end
   //loop over string --forEach char
-    //if char is num|| letter, && key in obj, +1 to count, if  num || letter and not in obj, add it to obj and set value to 1
-    // if char is not letter||num, do nothing
+    //if char is num|| varter, && key in obj, +1 to count, if  num || varter and not in obj, add it to obj and set value to 1
+    // if char is not varter||num, do nothing
 
   //look at each character- is it in the object yet?  if not, add to object and add 1 to count
   
@@ -59,11 +59,11 @@
 
 function charCount(str){
   //make object to return at end
-  let result = {};
+  var result = {};
   //loop over string --for each char
-  for(let i = 1; i < str.length; i++){
-    let char = str[i]+1
-    // //if char is num|| letter, && key in obj, +1 to count, if  num || letter and not in obj, add it to obj and set value to 1
+  for(var i = 0; i < str.length; i++){
+     var char = str[i]
+    // //if char is num|| varter, && key in obj, +1 to count, if  num || varter and not in obj, add it to obj and set value to 1
     if(result[char] > 0) {
       result[char]++;
     } 
@@ -73,5 +73,5 @@ function charCount(str){
   }
   return result
 }
-  // if char is not letter||num, do nothing
+  // if char is not varter||num, do nothing
   //look at each character- is it in the object yet?  if not, add to object and add 1 to count
