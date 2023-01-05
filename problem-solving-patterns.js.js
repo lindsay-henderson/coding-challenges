@@ -122,3 +122,86 @@ function sumZero(arr) {
 sumZero([-4, -3, -2, -1, 0,1,2,3,10])
 
 //* implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values in the array.  there can be negative numbers in the array, but it will always be sorted.
+
+//create an empty count array
+//create a value of i, i + 1 
+//iterate through the array comparing i+1 to i and adding to the count for each 
+
+//my answer with a slower runtime:
+
+// function countUniqueValues(arr){
+  //if (arr.length === 0) {
+    //return 0}
+//   let count = 1
+//   let i = 0
+//   for (let j = 1; j< arr.length; j++) {
+//       if (arr[i] !== arr[j])
+//       {count = count + 1
+//       console.log(arr[i], '!=', arr[j])
+//       }
+//       console.log(count)
+//       i++
+//       }
+//       console.log(count)
+//   }
+
+// countUniqueValues([1,1,2,3,3,4,5,6,6,7])
+////////////////////
+
+  function countUniqueValues(arr){
+    if (arr.length === 0) {
+      return 0}
+    let i = 0
+    for (let j=1; j < arr.length; j++) {
+      if (arr[i] !== arr[j]) {
+        i++
+        arr[i] = arr[j]
+      }
+    }
+    ans = i + 1
+    console.log(ans)
+}
+  
+    countUniqueValues([1,1,2,3,3,4,5,6,6,7])
+
+//! --> sliding window approach
+
+//* maxSubarraySum - accepts an array of integers and a number called n.  the function should calculate the maximum sum of n consecutive elements in an array
+
+//? time complexity of O(N)^2
+function maxSubarraySum(arr, num) {
+  if ( num > arr.length) {
+    return null
+  }
+  let max = -Infinity
+  for (let i = 0; i < arr.length; i++) {
+    temp = 0
+    for (let j=0; j < num; j++) {
+      temp += arr[i+j]
+    }
+    if (temp > max) {
+      max = temp
+    }
+    return max
+  }
+}
+
+
+//? below solution has O(N) time complexity
+
+function maxSubarraySum(arr, num) {
+  let maxSum = 0
+  let tempSum = 0
+  if (arr.length < num) return null
+  //iterate through first "num" indexes and set that first total as 'maxSum'
+  for(let i = 0; i < num; i++) {
+    maxSum += arr[i]
+  }
+  tempSum = maxSum
+  //start i at the next index after the first set of numbers.  subtract the lowest index, which will not be added once the next integer in the array is included ('i - num') and add on the number in the i index, 
+  for(let i = num; i < arr.length; i++) {
+    tempSum = tempSum- arr[i-num] + arr[i];
+    maxSum = Math.max(maxSum, tempSum)
+  }
+  return maxSum
+}
