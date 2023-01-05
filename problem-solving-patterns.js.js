@@ -1,4 +1,4 @@
-//frequency counters:
+//!--->frequency counters:
 //* write a function called SAME, which accepts two arrays. the function should remain true if every value in the array has it's corresponding value squared in the second array. the frequency of values must be the same.
 
 // function same(arr1, arr2){
@@ -52,7 +52,7 @@ function same(arr1, arr2){
 }
 
 
-//* given two strings, write a function to determine if the second string is an anagram of the first -- use frequency counter problem
+//* given two strings, write a function to determine if the second string is an anagram of the first -- use frequency counter problem 
 
 function validAnagram(a, b) {
   if (a.length !== b.length) {
@@ -77,3 +77,48 @@ function validAnagram(a, b) {
 }
 
 validAnagram('anagram', 'nagaram')
+
+//!patterns-->  pointers
+//* write a function called sumZero which accepts a **sorted** array of integers. the function should find the first pair where the sum is 0. return an array that includes both values that sum to zero, or undefined if a pair does not exist.
+//simplest solution is nested loops
+
+function sumZero(arr) {
+  for (let i = 0; 1 < arr.length; i++) {
+    for(let j = i+1; j< arr.length; j++) {
+      if (arr[i] + arr[j] === 0) {
+        console.log(arr[i], arr[j])
+        return arr[i], arr[j]
+      }
+    }
+  }
+}
+
+sumZero([-4,-3,-2,-1,0,1,2,5])
+
+//? this version is simply written out, but time complexity is O(N)^2 space complexity O(1)
+
+//? below has time complexity of O(N), space complexity of O(1)
+
+function sumZero(arr) {
+  let left = 0
+  let right = arr.length -1
+  while(left<right) {
+    let sum = arr[left] + arr[right]
+    if (sum === 0) {
+      console.log (arr[left], arr[right])
+      return [arr[left], arr[right]]
+    }
+    else if (sum > 0) {
+      console.log(sum, 'too high')
+      right --
+    }
+    else {
+      console.log(sum, 'too low')
+      left ++
+    }
+  }
+}
+
+sumZero([-4, -3, -2, -1, 0,1,2,3,10])
+
+//* implement a function called countUniqueValues, which accepts a sorted array, and counts the unique values in the array.  there can be negative numbers in the array, but it will always be sorted.
